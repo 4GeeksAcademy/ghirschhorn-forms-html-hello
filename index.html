@@ -14,168 +14,137 @@
 
 <body>
     <div class="container">
+        <form class="row g-1 needs-validation border rounded mt-3" novalidate>
 
-        <!-- Header -->
-        <div class="row">
-            <div class="col-md-6 mt-3 bg-body-tertiary border rounded-top w-100 p-3">
+            <!-- Header -->
+            <div class="col-12 bg-body-tertiary p-3">
                 <h3>Payment Form Example</h3>
             </div>
-        </div>
 
-        <div class="row border border-top-0 rounded-bottom p-3">
-            <!-- Alert -->
-            <div class="alert alert-danger mt-3" role="alert">
-                Some fields are missing!
+            <!-- Body -->
+            <div class="col-12 border-top border-bottom p-3">
+
+                <!-- Alert -->
+                <div class="alert alert-danger mt-3" role="alert">
+                    Some fields are missing!
+                </div>
+
+                <!-- Inputs -->
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="cardNum" class="form-label">Card #</label>
+                        <input type="number" class="form-control" id="cardNum" name="cardNum" required>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">Not valid</div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="cvcNum" class="form-label">CVC #</label>
+                        <input type="password" class="form-control" id="cvcNum" name="cvcNum" required>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">Not valid</div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="amount" class="form-label">Amount</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" id="amount" name="amount" placeholder="Amount"
+                                required>
+                        </div>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">Not valid</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">Not valid</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">Not valid</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city" required>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">Not valid</div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="country" class="form-label">Country</label>
+                        <select class="form-select" id="country" name="country" required>
+                            <option selected disabled>Choose a country</option>
+                            <option value="1">Argentina</option>
+                            <option value="2">Italy</option>
+                            <option value="3">Spain</option>
+                        </select>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">Not valid</div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="postalCode" class="form-label">Postal Code</label>
+                        <input type="number" class="form-control" id="postalCode" name="postalCode" required>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">Not valid</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="cards" class="form-label">We accept:</label>
+                        <div class="options d-flex flex-wrap border bg-secondary rounded p-2">
+                            <div class="form-check me-4">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="visa" required>
+                                <label class="form-check-label text-white" for="visa"><i
+                                        class="fa-brands fa-cc-visa"></i></label>
+                            </div>
+                            <div class="form-check me-4">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="master">
+                                <label class="form-check-label text-white" for="master"><i
+                                        class="fa-brands fa-cc-mastercard"></i></label>
+                            </div>
+                            <div class="form-check me-4">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="diners">
+                                <label class="form-check-label text-white" for="diners"><i
+                                        class="fa-brands fa-cc-diners-club"></i></label>
+                            </div>
+                            <div class="form-check me-4">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="apple">
+                                <label class="form-check-label text-white" for="apple"><i
+                                        class="fa-brands fa-cc-apple-pay"></i></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="floatingTextarea" class="form-label">Message</label>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="floatingTextarea" style="height: 150px;"></textarea>
+                            <small id="noteComments" class="form-text text-muted">Add any notes here.</small>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Form -->
-            <form class="row g-1 needs-validation" novalidate>
-                <div class="col-md-4" id="cardNum">
-                    <label for="cardNum" class="form-label">Card #</label>
-                    <input type="number" class="form-control" id="cardNum" name="cardNum" value=number required>
-                    <div class="valid-feedback">
-                        Valid
-                    </div>
-                    <div class="invalid-feedback">
-                        Not valid
-                    </div>
-                </div>
+            <!-- Footer / Buttons -->
+            <div class="col-12 bg-body-tertiary d-flex justify-content-end gap-2 p-3">
+                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
 
-                <div class="col-md-4" id="cvcNum">
-                    <label for="cvcNum" class="form-label">CVC #</label>
-                    <input type="password" class="form-control" id="cvcNum" name="cvcNum" required>
-                    <div class="valid-feedback">
-                        Valid
-                    </div>
-                    <div class="invalid-feedback">
-                        Not valid
-                    </div>
-                </div>
-
-                <div class="col-md-4" id="amount">
-                    <label for="amount" class="form-label">Amount</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" class="form-control" id="amount" name="amount" placeholder="Amount"
-                            value="number" required>
-                    </div>
-                    <div class="valid-feedback">
-                        Valid
-                    </div>
-                    <div class="invalid-feedback">
-                        Not valid
-                    </div>
-                </div>
-
-                <div class="col-md-6" id="firstName">
-                    <label for="firstName" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" required>
-                    <div class="valid-feedback">
-                        Valid
-                    </div>
-                    <div class="invalid-feedback">
-                        Not valid
-                    </div>
-                </div>
-
-                <div class="col-md-6" id="lastName">
-                    <label for="lastName" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" required>
-                    <div class="valid-feedback">
-                        Valid
-                    </div>
-                    <div class="invalid-feedback">
-                        Not valid
-                    </div>
-                </div>
-
-                <div class="col-md-6" id="city">
-                    <label for="city" class="form-label">City</label>
-                    <input type="text" class="form-control" id="city" name="city" required>
-                    <div class="valid-feedback">
-                        Valid
-                    </div>
-                    <div class="invalid-feedback">
-                        Not valid
-                    </div>
-                </div>
-
-                <div class="col-md-3" id="country">
-                    <label for="country" class="form-label">Country</label>
-                    <select class="form-select" id="country" name="country" required>
-                        <option selected disabled>Choose a country</option>
-                        <option value="1">Argentina</option>
-                        <option value="2">Italy</option>
-                        <option value="3">Spain</option>
-                    </select>
-                    <div class="valid-feedback">
-                        Valid
-                    </div>
-                    <div class="invalid-feedback">
-                        Not valid
-                    </div>
-                </div>
-
-                <div class="col-md-3" id="postalCode">
-                    <label for="postalCode" class="form-label">Postal Code</label>
-                    <input type="number" class="form-control" id="postalCode" name="postalCode" value=number required>
-                    <div class="valid-feedback">
-                        Valid
-                    </div>
-                    <div class="invalid-feedback">
-                        Not valid
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <label for="cards" class="form-label">We accept:</label>
-                    <div class="options required d-flex flex-wrap border bg-secondary rounded p-2 w-max required">
-                        <div class="form-check me-4">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="visa">
-                            <label class="form-check-label text-white" for="visa"><i
-                                    class="fa-brands fa-cc-visa"></i></label>
-                        </div>
-                        <div class="form-check me-4">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="master">
-                            <label class="form-check-label text-white" for="master"><i
-                                    class="fa-brands fa-cc-mastercard"></i></label>
-                        </div>
-                        <div class="form-check me-4">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="diners">
-                            <label class="form-check-label text-white" for="diners"><i
-                                    class="fa-brands fa-cc-diners-club"></i></label>
-                        </div>
-                        <div class="form-check me-4">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="apple">
-                            <label class="form-check-label text-white" for="apple"><i
-                                    class="fa-brands fa-cc-apple-pay"></i></label>
-                        </div>
-                    </div>
-                    <div class="invalid-feedback">
-                        You must choose one payment method
-                    </div>
-                </div>
-
-                <div class="col-md-3"></div>
-
-                <div class="col-md-6">
-                    <label for="floatingTextarea">Message</label>
-                    <div class="form-floating mt-2">
-                        <textarea class="form-control" id="floatingTextarea" style="height: 150px;"></textarea>
-                        <small id="noteComments" class="form-text text-muted">Add any notes here.</small>
-                    </div>
-                </div>
-
-                <div class="col-12 bg-body-tertiary border-top rounded-bottom d-flex justify-content-end gap-2 p-3 mt-4">
-                    <button type="button" class="btn btn-secondary">Cancel</button>
-                    <button class="btn btn-success" type="submit">Send</button>
-                </div>
-
-            </form>
-        </div>
-
-
+        </form>
     </div>
+
+
+
+
+
 
     <script>
         (() => {
